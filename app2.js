@@ -80,8 +80,34 @@ db.query(query, (err, res) => {
         throw err
     }})
 }
+//View Employees By ManagerID
+function renderEmployeesByManager(selectedManagerID){
+    let query = 'SELECT * FROM employee WHERE manager_id = ' + selectedManagerID
+    db.query(query, (err, res) => {
+    if (err){
+        throw err
+    } 
+        console.table(res)
+    })
+}
+//Renders a table that is a subset of a different table showing all members of the table that have the specified value for a specified field
+function renderSubTable(tableName, fieldToFilterBy, valueToFilterBy){
+    let query = 'SELECT * FROM ' + tableName + ' WHERE ' + fieldToFilterBy + ' = ' + correctString(valueToFilterBy)
+    db.query(query, (err, res) => {
+        if (err){
+            throw err
+        } 
+            console.table(res)
+        })
+}
+
+
+
+//View total sum of employee salaries by department
 
 //addToTable("roles", "\'Big Orc\'", 90000, 5)
 //updateTableByID("roles", 4, "salary", 22)
 //addToTable("roles", "Biggest Orc", 120000, 5)
-renderTable("roles")
+renderSubTable("employee", "manager_id", 2)
+//renderEmployeesByManager("")
+
