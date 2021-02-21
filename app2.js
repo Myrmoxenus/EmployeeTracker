@@ -4,8 +4,6 @@ const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require('constants')
 const fs = require('fs')
 const mysql = require('mysql')
 
-var columnArray = []
-
 // Creates a connection to MySQL
 const db = mysql.createConnection({
     host: 'localhost',
@@ -32,9 +30,21 @@ function renderTable(tableName){
         console.table(res)
     })
 }
+//Takes an argument and correctly formats it if it's a string for MySQL
+function correctString(anArgument){
+    if(typeof anArgument == 'string'){
+        correctedArgument = "\'" + anArgument + "\'"
+    }
+    else {
+        correctedArgument = anArgument
+    }
+    return correctedArgument
+}
 
-//
+//Takes a table name and a series of arguments 
 function addToTable(tableName, ...columnData){
+    //Runs all column data arguments through the correctString function
+    columnData.forEach((val, index) => columnData[index] = correctString(val))
     let query1 = 'SHOW COLUMNS FROM ' + tableName
     db.query(query1, (err, res) => {
         if(err){
@@ -53,6 +63,25 @@ function addToTable(tableName, ...columnData){
                         }})})
 }
 
+//Deletes a from a table based on an ID
+function deleteFromTableByID(tableName, id){
+    let query = 'DELETE from ' + tableName + ' where id = ' + id
+    db.query(query, (err, res) => {
+        if (err){
+            throw err
+        }})
+}
 
+//Updates a table with at desired field with desired value where ID equals entered ID
+function updateTableByID(tableName, id, fieldToUpdate, newValue){
+let query = 'UPDATE ' + tableName + ' SET ' + fieldToUpdate + " = " +  correctString(newValue) + " WHERE id = " + id
+db.query(query, (err, res) => {
+    if (err){
+        throw err
+    }})
+}
+
+//addToTable("roles", "\'Big Orc\'", 90000, 5)
+//updateTableByID("roles", 4, "salary", 22)
+//addToTable("roles", "Biggest Orc", 120000, 5)
 renderTable("roles")
-//addToTable('roles', "\'Intern\'", 0, 5)

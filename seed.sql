@@ -8,7 +8,7 @@ VALUES
 ("Department 0"),
 ("Another Department");
 
-INSERT INTO role (title, salary, department_id)
+INSERT INTO roles (title, salary, department_id)
 VALUES 
 ("Bard", 20, 1),
 ("Darth", 3000, 1),
