@@ -60,5 +60,5 @@ function addToTable(tableName, ...columnData){
 }
 
 
-//renderTable("roles")
+renderTable("merged")
 console.log(generateColumnList("roles"))
