@@ -117,7 +117,7 @@ function retrieveAll(tableName, field){
     return outputArray
 }
 
-//Transmute
+//Replaces a list of employee names with employeeIDs or vice versa
 function transmuteEmployee(employeeInput, employeeTable){
 if (typeof employeeInput == 'number'){
     for (w=0; w<employeeTable.length;w++){
@@ -160,8 +160,7 @@ new question('confirm','continue', 'Perform another action?')
     }
     else{
         process.exit(1)
-    }
-    
+    }  
   })
 }
 
@@ -257,7 +256,6 @@ new question ('list','Action', 'What would you like to do?',
             //Console.log()s the result. I am not proud of this solution.
             console.log(evaluateArray(countAndSalariesArray))
             resume()
-
         })
     }
     if(answers.Action == "Add an Employee"){
