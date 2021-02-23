@@ -214,7 +214,7 @@ new question ('list','Action', 'What would you like to do?',
             new question ('list','departmentChoice', 'Which department?', allDepartments)
         ])
         .then(answers => {
-            //... Alright, I know this is a huge mess but bare with me. Maybe I'll go back and make this less stupid later ¯\_(ツ)_/¯
+            //... Alright, I know this is a huge mess but bear with me. Maybe I'll go back and make this less stupid later ¯\_(ツ)_/¯
             //Stores the selected department's ID
             let departmentChoiceID = allDepartmentIDs[allDepartments.indexOf(answers.departmentChoice)]
             //Function that generates an array of paired values. For every role assosciated with a department it makes a pair with the roleID as the first member, and the salary for that role as the second member
