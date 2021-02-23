@@ -81,23 +81,6 @@ function renderSubTable(tableName, fieldToFilterBy, valueToFilterBy){
         })
 }
 
-//For generating choice lists within inquirer questions from tables
-function generateList(tableName, fieldToFilterBy){
-    let outputArray = []
-    let query = 'SELECT DISTINCT ' + fieldToFilterBy +' FROM ' + tableName
-    db.query(query, (err, res) => {
-    if (err){
-        throw err
-    } 
-        console.log(res)
-        for(h=0; h<res.length;h++){
-            eval("outputArray.push(res[h]." + fieldToFilterBy +")")
-        }
-
-        })
-    return outputArray
-}
-
 //For counting the number of members of a table that have a certain parameter at a certain value
 function count(tableName, desiredField, desiredValue){
     let currentCount = 0
