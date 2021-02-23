@@ -23,9 +23,9 @@ VALUES
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES
 ("Chicken", "Andnoodle", 3, 1),
-("Vurbag", "Eagungad", 8, 1),
-("Snakha", "Umhra", 8, 1),
-("Sarfu", "Azuk", 8, 1),
+("Vurbag", "Eagungad", 8, 2),
+("Snakha", "Umhra", 8, 2),
+("Sarfu", "Azuk", 8, 3),
 ("Ulumpha", "Mor", 8, 1),
 ("Lash", "Bula", 8, 1),
 ("Bulfim", "Budurash", 8, 1),
