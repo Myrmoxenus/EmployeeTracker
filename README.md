@@ -13,7 +13,7 @@
 
 
 ## Description:
-Completed as a homework assignment for Washington University's Fullstack Web Development Program. The purpurpose of the application is using inquirer.js to ask the user for a series of prompts and be able to manipulate MySQL tables. Example tables included a table for department, roles, and employees in a fictional company.
+Completed as a homework assignment for Washington University's Fullstack Web Development Program. The purpose of the application is using inquirer.js to ask the user for a series of prompts and be able to manipulate MySQL tables. Example tables included a table for department, roles, and employees in a fictional company.
 
 ## Usage:
 Intallation will consist of generating tables using the schema.sql. Seed.sql is provided for users who would like false data to work with. The application is dependent on npm inquirer and npm MySQL to function.
