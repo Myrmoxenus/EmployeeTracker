@@ -48,11 +48,11 @@ Upon running the application, it will prompt the user with a series of options a
 ## License: 
 MIT
 
-## Contributing: 
-[Myrmoxenus](https://github.com/Myrmoxenus)
-
 ## Screenshot: 
 ![Screenshot of ReadMe Generator in Use](Images/screenshot.png)
 
 ## Walkthrough:
 [Link to Walkthrough Video!](https://drive.google.com/drive/folders/1OnADLzX_jZacfchbDS_yCszsTkBkI7e0)
+
+## Created By: 
+[Myrmoxenus](https://github.com/Myrmoxenus)
